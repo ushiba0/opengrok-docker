@@ -1,0 +1,10 @@
+services:
+  opengrok:
+    build: .
+    container_name: opengrokv1
+    ports:
+      - "8080:8080"
+    volumes:
+      - /opengrok/data:/opengrok/data
+      - /opengrok/src:/opengrok/src
+    restart: unless-stopped
